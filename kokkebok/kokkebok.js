@@ -7,13 +7,14 @@ async function hentOppskrift() {
 
     document.getElementById("resultat").innerHTML = "";
 
-    for (let i = 1; i < 4; i++) {
-        let ingredienser = document.createElement("p");
-        ingredienser.innerText = json.meals[0].strIngredient + i;
+    for (let i = 1; i <= 4; i++) {
+        const ingredienser = document.createElement("p");
+        ingredienser.innerText = json.meals[0][`strIngredient${i}`];
+        document.getElementById("resultat").appendChild(ingredienser);
         console.log(ingredienser);
     }
 
-    console.table(json);
+    console.log(json);
     console.table(json.meals[0])
 }
 
